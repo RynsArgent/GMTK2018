@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 15
-  productGUID: f1a3320f5fec465449e443c217427c00
+  productGUID: f252e1f3f3183f04ebfa9b4afe0c0d80
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -648,8 +648,8 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: aa2bf234-a851-48eb-b76c-3d14e6b866b4
-  projectName: Test Project
+  cloudProjectId: eb4f8276-a272-40f1-8105-9e7c4ea580de
+  projectName: Test Project (1)
   organizationId: evan-shen
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
