@@ -4,7 +4,7 @@ public class scr_laserpoint : MonoBehaviour {
     private LineRenderer linerenderer;
     public Transform Tower;
     public Vector3 offset;
-    public static int Mana;
+    public int Mana;
     // Use this for initialization
     void Start() {
         linerenderer = GetComponent<LineRenderer>();

@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 
 public class ManaUI : MonoBehaviour {
-    Text Mana;
-    // Update is called once per frame
+    public scr_laserpoint manaPoints;
+    public Text UI;
+
     void Update () {
-        Mana.text = "Mana: " + scr_laserpoint.Mana;
-	}
+        UI.text = "Mana: " + manaPoints.Mana;
+    }
 }
