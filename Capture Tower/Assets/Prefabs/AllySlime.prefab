@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212736467077870992}
   - component: {fileID: 95419350340427576}
   - component: {fileID: 114860106129322724}
+  - component: {fileID: 58595710942865870}
   m_Layer: 0
   m_Name: AllySlime
   m_TagString: Untagged
@@ -42,6 +43,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &58595710942865870
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1814712483955214}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!95 &95419350340427576
 Animator:
   serializedVersion: 3
