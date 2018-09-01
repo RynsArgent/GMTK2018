@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: SlimeMove
+  m_Name: SlimeGreenHurt
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -19,13 +19,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300008, guid: 91d57bef35191e94490cf405a76eaa47, type: 3}
+      value: {fileID: 21300026, guid: 1742f10bbfdb9ea4095d69ce8d9f8c55, type: 3}
     - time: 0.083333336
-      value: {fileID: 21300010, guid: 91d57bef35191e94490cf405a76eaa47, type: 3}
+      value: {fileID: 21300028, guid: 1742f10bbfdb9ea4095d69ce8d9f8c55, type: 3}
     - time: 0.16666667
-      value: {fileID: 21300012, guid: 91d57bef35191e94490cf405a76eaa47, type: 3}
+      value: {fileID: 21300030, guid: 1742f10bbfdb9ea4095d69ce8d9f8c55, type: 3}
     - time: 0.25
-      value: {fileID: 21300014, guid: 91d57bef35191e94490cf405a76eaa47, type: 3}
+      value: {fileID: 21300032, guid: 1742f10bbfdb9ea4095d69ce8d9f8c55, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -45,10 +45,10 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300008, guid: 91d57bef35191e94490cf405a76eaa47, type: 3}
-    - {fileID: 21300010, guid: 91d57bef35191e94490cf405a76eaa47, type: 3}
-    - {fileID: 21300012, guid: 91d57bef35191e94490cf405a76eaa47, type: 3}
-    - {fileID: 21300014, guid: 91d57bef35191e94490cf405a76eaa47, type: 3}
+    - {fileID: 21300026, guid: 1742f10bbfdb9ea4095d69ce8d9f8c55, type: 3}
+    - {fileID: 21300028, guid: 1742f10bbfdb9ea4095d69ce8d9f8c55, type: 3}
+    - {fileID: 21300030, guid: 1742f10bbfdb9ea4095d69ce8d9f8c55, type: 3}
+    - {fileID: 21300032, guid: 1742f10bbfdb9ea4095d69ce8d9f8c55, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
