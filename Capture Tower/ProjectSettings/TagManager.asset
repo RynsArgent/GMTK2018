@@ -38,9 +38,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Laser
-    uniqueID: 4220482469
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -49,4 +46,10 @@ TagManager:
     locked: 0
   - name: Units
     uniqueID: 446433425
+    locked: 0
+  - name: tower
+    uniqueID: 715927577
+    locked: 0
+  - name: laser
+    uniqueID: 3437985569
     locked: 0
