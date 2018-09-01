@@ -122,15 +122,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4549959007403228, guid: 0a4a5f6625c43eb4c8c7fbbb8a5a29c1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.93
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4549959007403228, guid: 0a4a5f6625c43eb4c8c7fbbb8a5a29c1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4549959007403228, guid: 0a4a5f6625c43eb4c8c7fbbb8a5a29c1, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -2.9707031
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4549959007403228, guid: 0a4a5f6625c43eb4c8c7fbbb8a5a29c1, type: 2}
       propertyPath: m_LocalRotation.x
@@ -156,7 +156,12 @@ Prefab:
         type: 2}
       propertyPath: laserPoint
       value: 
-      objectReference: {fileID: 1651677605}
+      objectReference: {fileID: 1439031441}
+    - target: {fileID: 114641944394761034, guid: 0a4a5f6625c43eb4c8c7fbbb8a5a29c1,
+        type: 2}
+      propertyPath: Tower
+      value: 
+      objectReference: {fileID: 1439031441}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a4a5f6625c43eb4c8c7fbbb8a5a29c1, type: 2}
   m_IsPrefabAsset: 0
@@ -169,11 +174,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4111466160123484, guid: 266c9ed558b7df64a9a8645ffae338ab, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.02
+      value: -2.64
       objectReference: {fileID: 0}
     - target: {fileID: 4111466160123484, guid: 266c9ed558b7df64a9a8645ffae338ab, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.75
+      value: 1.96
       objectReference: {fileID: 0}
     - target: {fileID: 4111466160123484, guid: 266c9ed558b7df64a9a8645ffae338ab, type: 2}
       propertyPath: m_LocalPosition.z
@@ -271,7 +276,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1439031439}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.62, y: 0.56, z: 0}
+  m_LocalPosition: {x: -2.68, y: 0.22, z: 0}
   m_LocalScale: {x: 0.952, y: 3.518, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -354,11 +359,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1651677605 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4111466160123484, guid: 266c9ed558b7df64a9a8645ffae338ab,
-    type: 2}
-  m_PrefabInternal: {fileID: 193998199}
 --- !u!1 &1753475670 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1267607653781316, guid: 0a4a5f6625c43eb4c8c7fbbb8a5a29c1,
@@ -379,7 +379,7 @@ LineRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -401,7 +401,7 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 1
@@ -410,7 +410,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.06617737
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -452,7 +452,7 @@ LineRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 0
+    textureMode: 1
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
