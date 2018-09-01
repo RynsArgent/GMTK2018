@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class Ally : Unit {
 
+	private GameObject target;
+
 	// Use this for initialization
 	void Start () {
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	protected override void Update () {
+		base.Update();
 	}
 
-	private void OnTriggerEnter2D(Collider2D other) {
-		Destroy(other.gameObject);
-	}
+
+
 }
