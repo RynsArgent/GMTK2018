@@ -1,28 +1,28 @@
 fileFormatVersion: 2
-guid: 91d57bef35191e94490cf405a76eaa47
+guid: 1742f10bbfdb9ea4095d69ce8d9f8c55
 TextureImporter:
   fileIDToRecycleName:
-    21300000: slime-blu-idle-0
-    21300002: slime-blu-idle-1
-    21300004: slime-blu-idle-2
-    21300006: slime-blu-idle-3
-    21300008: slime-blu-move-0
-    21300010: slime-blu-move-1
-    21300012: slime-blu-move-2
-    21300014: slime-blu-move-3
-    21300016: slime-blu-attack-0
-    21300018: slime-blu-attack-1
-    21300020: slime-blu-attack-2
-    21300022: slime-blu-attack-3
-    21300024: slime-blu-attack-4
-    21300026: slime-blu-hurt-0
-    21300028: slime-blu-hurt-1
-    21300030: slime-blu-hurt-2
-    21300032: slime-blu-hurt-3
-    21300034: slime-blu-die-0
-    21300036: slime-blu-die-1
-    21300038: slime-blu-die-2
-    21300040: slime-blu-die-3
+    21300000: slime-grn-idle-0
+    21300002: slime-grn-idle-1
+    21300004: slime-grn-idle-2
+    21300006: slime-grn-idle-3
+    21300008: slime-grn-move-0
+    21300010: slime-grn-move-1
+    21300012: slime-grn-move-2
+    21300014: slime-grn-move-3
+    21300016: slime-grn-attack-0
+    21300018: slime-grn-attack-1
+    21300020: slime-grn-attack-2
+    21300022: slime-grn-attack-3
+    21300024: slime-grn-attack-4
+    21300026: slime-grn-hurt-0
+    21300028: slime-grn-hurt-1
+    21300030: slime-grn-hurt-2
+    21300032: slime-grn-hurt-3
+    21300034: slime-grn-die-0
+    21300036: slime-grn-die-1
+    21300038: slime-grn-die-2
+    21300040: slime-grn-die-3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: slime-blu-idle-0
+      name: slime-grn-idle-0
       rect:
         serializedVersion: 2
         x: 0
@@ -113,19 +113,19 @@ TextureImporter:
         width: 32
         height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb877476404f25f439f699aafa25559b
+      spriteID: eccdc8d7903d4a24da28dcf6897518d3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-blu-idle-1
+      name: slime-grn-idle-1
       rect:
         serializedVersion: 2
         x: 32
@@ -133,19 +133,19 @@ TextureImporter:
         width: 32
         height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 277a42482b6581441920f51b3a96c5cc
+      spriteID: 3f1385f35df97334282c42df89be42a2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-blu-idle-2
+      name: slime-grn-idle-2
       rect:
         serializedVersion: 2
         x: 64
@@ -153,19 +153,19 @@ TextureImporter:
         width: 32
         height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4a683422d0599d4db97d008ac49d71a
+      spriteID: dafb0d51a4f73b34a815ae5c5fa65d2e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-blu-idle-3
+      name: slime-grn-idle-3
       rect:
         serializedVersion: 2
         x: 96
@@ -173,19 +173,19 @@ TextureImporter:
         width: 32
         height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5abb6c6528f42194391073de62fd0c6e
+      spriteID: b43ca22fee98d624c960f7641ccae4ab
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-blu-move-0
+      name: slime-grn-move-0
       rect:
         serializedVersion: 2
         x: 128
@@ -193,19 +193,19 @@ TextureImporter:
         width: 32
         height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2ac0b4383484eb4495cec92e45a7633
+      spriteID: 907ec60f7bf7a614e9c745e0232cf18b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-blu-move-1
+      name: slime-grn-move-1
       rect:
         serializedVersion: 2
         x: 160
@@ -213,19 +213,19 @@ TextureImporter:
         width: 32
         height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bbd83be395e1764293c5cf70b01a72d
+      spriteID: 5a03610d62b61a44cbc99aabb4b337d8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-blu-move-2
+      name: slime-grn-move-2
       rect:
         serializedVersion: 2
         x: 192
@@ -233,19 +233,19 @@ TextureImporter:
         width: 32
         height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbebefdc0228c504aa5526070eddbf2d
+      spriteID: aa6c867a196df24408d29cbd40c105aa
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-blu-move-3
+      name: slime-grn-move-3
       rect:
         serializedVersion: 2
         x: 224
@@ -253,19 +253,19 @@ TextureImporter:
         width: 32
         height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5043a7959aa41c44296baf0a53390bed
+      spriteID: 1d1a0538025242e4eae3001a21f881c5
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-blu-attack-0
+      name: slime-grn-attack-0
       rect:
         serializedVersion: 2
         x: 0
@@ -273,19 +273,19 @@ TextureImporter:
         width: 32
         height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 166d1576647be244e9d58f8f5145a9fc
+      spriteID: bff8907fe2f56464898013c9d3d5cc50
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-blu-attack-1
+      name: slime-grn-attack-1
       rect:
         serializedVersion: 2
         x: 32
@@ -293,19 +293,19 @@ TextureImporter:
         width: 32
         height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 671c2ee9850a2f94287d372a4b249311
+      spriteID: 6dd64b5b950094b43a05d32114ba7042
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-blu-attack-2
+      name: slime-grn-attack-2
       rect:
         serializedVersion: 2
         x: 64
@@ -313,19 +313,19 @@ TextureImporter:
         width: 32
         height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ea327860f02cd545b1f62fde3c72ca4
+      spriteID: 8256365fec62c2a4b8110500b0f8ea5b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-blu-attack-3
+      name: slime-grn-attack-3
       rect:
         serializedVersion: 2
         x: 96
@@ -333,19 +333,19 @@ TextureImporter:
         width: 32
         height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 347181a050e881e4a952dde22fc9516c
+      spriteID: a6ec69088e1925644b9a3d015f084f48
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-blu-attack-4
+      name: slime-grn-attack-4
       rect:
         serializedVersion: 2
         x: 128
@@ -353,19 +353,19 @@ TextureImporter:
         width: 32
         height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 947043a485daeb348b2c3b99716df55c
+      spriteID: 31eff6bdf74ca154d988f1c48444d45e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-blu-hurt-0
+      name: slime-grn-hurt-0
       rect:
         serializedVersion: 2
         x: 160
@@ -373,19 +373,19 @@ TextureImporter:
         width: 32
         height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: deca403b090e9d547884dce73a1217e9
+      spriteID: 717dd733d47fa2b41b2651351c8c0509
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-blu-hurt-1
+      name: slime-grn-hurt-1
       rect:
         serializedVersion: 2
         x: 192
@@ -393,19 +393,19 @@ TextureImporter:
         width: 32
         height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26b29de3ca4fb1d4bb962e88caac9302
+      spriteID: 15f20894736d57c4192ca072e926e53d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-blu-hurt-2
+      name: slime-grn-hurt-2
       rect:
         serializedVersion: 2
         x: 224
@@ -413,19 +413,19 @@ TextureImporter:
         width: 32
         height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d601cff4ffe4cc246a21a2c123d511db
+      spriteID: be337b9c92403474d887e44862ecad09
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-blu-hurt-3
+      name: slime-grn-hurt-3
       rect:
         serializedVersion: 2
         x: 0
@@ -433,19 +433,19 @@ TextureImporter:
         width: 32
         height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26d9cf7ec0af32e49a7cb45e649b558d
+      spriteID: 2860e35253767834fa26fde9c152cd32
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-blu-die-0
+      name: slime-grn-die-0
       rect:
         serializedVersion: 2
         x: 32
@@ -453,19 +453,19 @@ TextureImporter:
         width: 32
         height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6263cd18ab4702349bb385ca8497ed0f
+      spriteID: 387896fb29415934f978787d0c619dc5
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-blu-die-1
+      name: slime-grn-die-1
       rect:
         serializedVersion: 2
         x: 64
@@ -473,19 +473,19 @@ TextureImporter:
         width: 32
         height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d48b3327969a30b4799bd254bb5b7163
+      spriteID: 25ac751e7f88104489ae3a0fe4f4580b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-blu-die-2
+      name: slime-grn-die-2
       rect:
         serializedVersion: 2
         x: 96
@@ -493,19 +493,19 @@ TextureImporter:
         width: 32
         height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4deb206f36688a146ba8c734f74e8a8b
+      spriteID: 17ad2bd2aeb265b4b829530345d1ae98
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime-blu-die-3
+      name: slime-grn-die-3
       rect:
         serializedVersion: 2
         x: 128
@@ -513,13 +513,13 @@ TextureImporter:
         width: 32
         height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df403de573f8ac04ebce3463886e72e4
+      spriteID: 972b78015f4418541bf67361b1e418a1
       vertices: []
       indices: 
       edges: []
@@ -527,7 +527,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: e8b52f13c5f54ef41b5f3da87f6bc52f
+    spriteID: 09289a80a81597e41bcdfcf37d5e4a05
     vertices: []
     indices: 
     edges: []
