@@ -51,5 +51,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a6ddcfa22f204146b35a4e89ca7ccf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  linerenderer: {fileID: 0}
   laserPoint: {fileID: 0}
