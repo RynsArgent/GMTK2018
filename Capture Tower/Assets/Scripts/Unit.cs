@@ -91,6 +91,7 @@ public abstract class Unit : MonoBehaviour {
         if (attackTarget != null)
         {
             attackTarget.GetComponent<Unit>().Damage(damage);
+            attackTarget = null;
         }
     }
 

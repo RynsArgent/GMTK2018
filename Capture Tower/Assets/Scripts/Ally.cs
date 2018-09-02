@@ -17,6 +17,13 @@ public class Ally : Unit {
 	}
 
 	public override void OnTriggerAggroRange(GameObject other) {
+        // If the game object is cleaned up, it will have no unit component.
+        Unit otherUnitComponent = other.GetComponent<Unit>();
+        if (otherUnitComponent == null)
+        {
+            return;
+        }
+
 		if (aggroQueue.Count < aggroLimit && !aggroQueue.Contains(other)) {
 			aggroQueue.Add(other);
 			other.GetComponent<Unit>().Engage(gameObject);

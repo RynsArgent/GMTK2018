@@ -45,7 +45,15 @@ public class Enemy : Unit {
 		}
 	}
 
-	public override void OnTriggerAggroRange(GameObject other) {
+	public override void OnTriggerAggroRange(GameObject other)
+    {
+        // If the game object is cleaned up, it will have no unit component.
+        Unit otherUnitComponent = other.GetComponent<Unit>();
+        if (otherUnitComponent == null)
+        {
+            return;
+        }
+
         if (other.name != "Tower")
         {
             // Quick way to make the enemies aggro the tower only and not all attack the allied slime.
