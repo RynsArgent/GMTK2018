@@ -221,6 +221,7 @@ MonoBehaviour:
   damage: 2
   attackSpeed: 2
   aggroLimit: 1
+  manaLoot: 0
   target: {fileID: 0}
   aggroQueue: []
   interestedEnemies: []
