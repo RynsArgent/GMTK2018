@@ -7,7 +7,6 @@ public class Enemy : Unit {
     public Ally allyVersion;
     public int ConversionCost = 10;
 
-    private GameObject convert;
 	private Path path;
 	private Transform[] waypoints;
 	private int currentWp = 0;
@@ -25,8 +24,12 @@ public class Enemy : Unit {
 		if (state == State.Dying) {
 			// Dying, do nothing else
 			return;
-		}
-		if (aggroQueue.Count == 0 && currentWp < waypoints.Length && state != State.Attacking) {
+		} else if (target != null) {
+			if (state != State.Attacking) {
+				Debug.Log(name + " ATTACKING " + target.name + "!");
+				StartCoroutine("Attack", target);
+			}
+		} else if (currentWp < waypoints.Length && state != State.Attacking) {
 			if (targetWp == null)
 				targetWp = waypoints[currentWp];
 
@@ -45,19 +48,15 @@ public class Enemy : Unit {
     {
         // If the game object is cleaned up, it will have no unit component.
         Unit otherUnitComponent = other.GetComponent<Unit>();
-        if (otherUnitComponent == null)
-        {
+        if (otherUnitComponent == null) {
             return;
         }
 
-        if (other.name != "Tower")
-        {
-            // Quick way to make the enemies aggro the tower only and not all attack the allied slime.
-            return;
-        }
-		if (aggroQueue.Count < aggroLimit && !aggroQueue.Contains(other)) {
-			aggroQueue.Add(other);
-			other.GetComponent<Unit>().Engage(gameObject);
+		if (target == null) {
+			bool otherHasAggroCapacity = otherUnitComponent.Engage(gameObject);
+			if (otherHasAggroCapacity) {
+				target = other;
+			}
 		}
 	}
 
