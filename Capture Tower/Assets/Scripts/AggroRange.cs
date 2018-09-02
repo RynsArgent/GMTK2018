@@ -11,29 +11,22 @@ public class AggroRange : MonoBehaviour {
 		unit = GetComponentInParent<Unit>();
 	}
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
+    private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.tag == this.tag) return;      // Don't collide with units on the same team
-                                                    //Debug.Log(this.transform.parent.name + ".AggroRange: \"" +
-                                                    //collision.transform.parent.name + "." + collision.name + " triggered aggro bounds.\"");
-        if (collision.tag == "Enemy" || collision.tag == "Ally")
-        {
+		if (collision.tag == "Enemy" || collision.tag == "Ally") {
+			Debug.Log(this.transform.parent.name + ".AggroRange: \"" +
+					collision.transform.parent.name + "." + collision.name + " triggered aggro bounds.\"");
             unit.OnTriggerAggroRange(collision.transform.parent.gameObject);
-        }
-        else
-        {
+        } else {
             unit.OnTriggerAggroRange(collision.gameObject);
         }
     }
 
 	private void OnTriggerExit2D(Collider2D collision) {
 		if (collision.tag == this.tag) return;      // Don't collide with units on the same tea
-        if (collision.tag == "Enemy" || collision.tag == "Ally")
-        {
+        if (collision.tag == "Enemy" || collision.tag == "Ally") {
             unit.OnTriggerExitAggroRange(collision.transform.parent.gameObject);
-        }
-        else
-        {
+        } else {
             unit.OnTriggerExitAggroRange(collision.gameObject);
         }
 	}
