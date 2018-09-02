@@ -12,7 +12,9 @@ public class UnitBounds : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision) {
-		if (collision.tag == this.tag) return;		// Don't collide with units on the same team
+		if (collision.tag == this.tag || collision.gameObject.layer == 10) return;	// Don't collide with units on the same team or AggroBounds
+		Debug.Log(this.transform.parent.name + ".UnitBounds: \"" + 
+			collision.transform.parent.name + "." + collision.name + " triggered unit bounds.\"");
 		unit.OnTriggerUnitBounds(collision.transform.parent.gameObject);
 	}
 }

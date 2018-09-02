@@ -4,14 +4,16 @@ using UnityEngine;
 
 public abstract class Unit : MonoBehaviour {
 
+	public int hp = 2;
 	public float moveSpeed = 3f;
 	public float attackSpeed = 1f;
 
 	protected SpriteRenderer spriteRenderer;
 	protected Animator animator;
-	protected GameObject target;
+	protected GameObject target = null;
 	
 	private bool targetInRange = false;
+	public bool readyToAttack = true;
 
 	// Use this for initialization
 	void Awake() {
@@ -21,40 +23,43 @@ public abstract class Unit : MonoBehaviour {
 
 	// Update is called once per frame
 	protected virtual void Update() {
-		if (target != null && targetInRange) {
-			Attack();
+		if (target != null && targetInRange && readyToAttack) {
+			Debug.Log(name + " attacking " + target.name + "!");
+			StartCoroutine(Attack());
 		}
 	}
 
 	public void OnTriggerAggroRange(GameObject other) {
-		Debug.Log(name + ": \"" + other.name + " entered aggro range.\"");
+
 
 	}
 
 	public void OnTriggerUnitBounds(GameObject other) {
-		Debug.Log(name + ": \"" + other.name + " entered unit bounds.\"");
 		target = other;
 		targetInRange = true;
 	}
 
-	protected void MoveToTarget() {
-		transform.root.position = Vector3.MoveTowards(transform.root.position, target.transform.position, moveSpeed * Time.deltaTime);
+	IEnumerator Attack() {
+		readyToAttack = false;
+		animator.SetTrigger("Attack");
+		target.GetComponent<Unit>().Damage(1);
+		if (target == null) targetInRange = false;
+		yield return new WaitForSeconds(attackSpeed);
+		readyToAttack = true;
+	}
 
-		if (transform.root.position == target.transform.position) {
-			//currentWp++;
-			//if (currentWp == waypoints.Length) {
-			//	animator.SetBool("Move", false);
-			//	return;
-			//}
-			//targetWp = waypoints[currentWp];
+	public void Damage(int damage) {
+		hp -= damage;
+		if (hp <= 0) {
+			StartCoroutine(Die());
+		} else {
+			animator.SetTrigger("Hurt");
 		}
 	}
 
-	void Attack() {
-		animator.SetTrigger("Attack");
-		Destroy(target);
-		target = null;
-		targetInRange = false;
-		return;
+	IEnumerator Die() {
+		animator.SetTrigger("Die");
+		yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+		Destroy(gameObject);
 	}
 }
