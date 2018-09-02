@@ -15,8 +15,10 @@ public class Enemy : Unit {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if (currentWp < waypoints.Length) {
+	protected override void Update () {
+		base.Update();
+
+		if (aggroQueue.Count == 0 && currentWp < waypoints.Length) {
 			if (targetWp == null)
 				targetWp = waypoints[currentWp];
 
@@ -31,8 +33,12 @@ public class Enemy : Unit {
 		}
 	}
 
+	public override void OnTriggerAggroRange(GameObject other) {
+		// Override Unit.OnTriggerAggroRange to do nothing
+	}
+
 	private void MoveAlongPath() {
-		transform.root.position = Vector3.MoveTowards(transform.root.position, targetWp.position, speed * Time.deltaTime);
+		transform.root.position = Vector3.MoveTowards(transform.root.position, targetWp.position, moveSpeed * Time.deltaTime);
 
 		if (transform.root.position == targetWp.position) {
 			currentWp++;
