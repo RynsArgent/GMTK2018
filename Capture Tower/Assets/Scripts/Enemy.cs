@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : Unit {
 
     public Ally allyVersion;
+    public int ConversionCost = 10;
 
 	private Path path;
 	private Transform[] waypoints;
@@ -59,11 +60,15 @@ public class Enemy : Unit {
 		}
 	}
 
-    public override void OnClickUnitBounds() {
-        
-        // Instantiate Ally object and destroy this (cool conversion gfx?)
-        Instantiate(allyVersion, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
-        Destroy(gameObject);
+    public override void OnClickUnitBounds()
+    {
+        if (GameController.Mana >= ConversionCost + 0)
+        {
+            // Instantiate Ally object and destroy this (cool conversion gfx?)
+            Instantiate(allyVersion, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+            Destroy(gameObject);
+            GameController.Mana -= ConversionCost;
+        }
     }
 
 	private void MoveAlongPath() {

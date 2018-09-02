@@ -221,7 +221,7 @@ MonoBehaviour:
   damage: 1
   attackSpeed: 1
   aggroLimit: 1
-  manaLoot: 10
+  manaLoot: 5
   hitsound1: {fileID: 8300000, guid: ff06d8c4ed448aa47a50d5f93f4acd3d, type: 3}
   hitsound2: {fileID: 8300000, guid: 55976b589b3b2774a8d4a0f612a65162, type: 3}
   target: {fileID: 0}
@@ -234,6 +234,7 @@ MonoBehaviour:
     type: 2}
   allyVersion: {fileID: 114860106129322724, guid: 0e8f2746278afab45852112498521a30,
     type: 2}
+  ConversionCost: 30
 --- !u!114 &114794496316961168
 MonoBehaviour:
   m_ObjectHideFlags: 1
