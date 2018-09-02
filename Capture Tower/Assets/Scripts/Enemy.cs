@@ -12,11 +12,11 @@ public class Enemy : Unit {
 	private int currentWp = 0;
 	private Transform targetWp;
 
-	// Use this for initialization
-	void Start () {
-		path = GameObject.Find("Path").GetComponent<Path>();
-		waypoints = path.waypointList;
-	}
+    public void SetPath(Path path)
+    {
+        this.path = path;
+        waypoints = path.waypointList;
+    }
 
     // Update is called once per frame
     protected override void Update () {
