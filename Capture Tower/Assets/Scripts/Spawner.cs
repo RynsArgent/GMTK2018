@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour
 
     // Where to spawn the entity.
     public GameObject SpawnWaypoint;
-    
+
     // When this game object is activated, it spawns the entity at the specified waypoint.
     public void OnEnable()
     {
@@ -26,6 +26,12 @@ public class Spawner : MonoBehaviour
         }
 
         Vector3 position = SpawnWaypoint.transform.position;
-        GameObject.Instantiate<GameObject>(SpawnPrefab, position, Quaternion.identity);
+        GameObject spawnedPrefab = GameObject.Instantiate<GameObject>(SpawnPrefab, position, Quaternion.identity);
+
+        Enemy spawnedEnemy = spawnedPrefab.GetComponent<Enemy>();
+        if (spawnedEnemy != null)
+        {
+            spawnedEnemy.SetPath(SpawnWaypoint.GetComponentInParent<Path>());
+        }
     }
 }

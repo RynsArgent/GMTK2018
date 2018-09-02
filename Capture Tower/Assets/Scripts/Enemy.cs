@@ -12,11 +12,11 @@ public class Enemy : Unit {
 	private int currentWp = 0;
 	private Transform targetWp;
 
-	// Use this for initialization
-	void Start () {
-		path = GameObject.Find("Path").GetComponent<Path>();
-		waypoints = path.waypointList;
-	}
+    public void SetPath(Path path)
+    {
+        this.path = path;
+        waypoints = path.waypointList;
+    }
 
     // Update is called once per frame
     protected override void Update () {
@@ -37,11 +37,6 @@ public class Enemy : Unit {
 			}
 
 			MoveAlongPath();
-
-            if (Input.GetMouseButtonDown(0) && GameController.skill == 1)
-            {
-                Damage(1);
-            }
 		}
 	}
 
@@ -66,19 +61,10 @@ public class Enemy : Unit {
 	}
 
     public override void OnClickUnitBounds() {
-
-        if (GameController.Mana > 0)
-        {
-            if (GameController.skill == 2)
-            { 
-                // Instantiate Ally object and destroy this (cool conversion gfx?)
-                Instantiate(allyVersion, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
-                Destroy(gameObject);
-                GameController.Mana -= 10;
-            }
-        }
         
-        
+        // Instantiate Ally object and destroy this (cool conversion gfx?)
+        Instantiate(allyVersion, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+        Destroy(gameObject);
     }
 
 	private void MoveAlongPath() {
