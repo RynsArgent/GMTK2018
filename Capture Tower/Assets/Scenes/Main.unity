@@ -735,7 +735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d341f42b00643094f9f2a6725a1b5547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ManaDelay: 300
+  ManaDelay: 100
   ManaRegen: 1
 --- !u!20 &519420031
 Camera:

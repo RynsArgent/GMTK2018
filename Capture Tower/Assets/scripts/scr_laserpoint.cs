@@ -1,29 +1,49 @@
 ﻿using UnityEngine;
 
-public class scr_laserpoint : MonoBehaviour {
+public class scr_laserpoint : MonoBehaviour
+{
     public static LineRenderer linerenderer;
     public Transform Tower;
     public Vector3 offset;
     private int laserTimer = 0;
-    
+    private int consumptionTimer = 0;
+
     private Collider2D[] mouseResults = new Collider2D[64];
     private int targetLayerMask;
-    
+
     // Use this for initialization
-    void Start() {
+    void Start()
+    {
         targetLayerMask = LayerMask.GetMask("UnitBounds");
         linerenderer = GetComponent<LineRenderer>();
         linerenderer.enabled = false;
         linerenderer.useWorldSpace = true;
         transform.position = Tower.position + offset;
-        
+
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         Vector2 worldMousePos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
         linerenderer.SetPosition(0, (Vector2)transform.position);
         linerenderer.SetPosition(1, worldMousePos);
+
+        if (Input.GetKey("mouse 0"))
+        {
+            if (GameController.Mana > 0)
+            {
+                if (consumptionTimer < 100)
+                {
+                    consumptionTimer++;
+                }
+                else
+                {
+                    consumptionTimer = 0;
+                    GameController.Mana -= 1;
+                }
+            }
+        }
 
         if (Input.GetKey("mouse 0"))
         {
@@ -48,8 +68,6 @@ public class scr_laserpoint : MonoBehaviour {
                             break;
                         }
                     }
-
-                    GameController.Mana -= 2;
                     laserTimer = 0;
                 }
             }
@@ -85,6 +103,6 @@ public class scr_laserpoint : MonoBehaviour {
             linerenderer.enabled = false;
         }
 
-        
+
     }
 }
