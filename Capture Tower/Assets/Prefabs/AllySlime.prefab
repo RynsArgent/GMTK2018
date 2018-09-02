@@ -19,9 +19,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4626668320388712}
-  - component: {fileID: 50393574140327320}
   - component: {fileID: 58094710416581026}
   - component: {fileID: 114120755670510964}
+  - component: {fileID: 50607315835045430}
   m_Layer: 11
   m_Name: UnitBounds
   m_TagString: Ally
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 212736467077870992}
   - component: {fileID: 95419350340427576}
   - component: {fileID: 114860106129322724}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AllySlime
   m_TagString: Ally
   m_Icon: {fileID: 0}
@@ -55,9 +55,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4209122533720238}
-  - component: {fileID: 50246848638139000}
   - component: {fileID: 58363108976379600}
   - component: {fileID: 114826037493010700}
+  - component: {fileID: 50709915493450086}
   m_Layer: 10
   m_Name: AggroRange
   m_TagString: Ally
@@ -106,13 +106,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50246848638139000
+--- !u!50 &50607315835045430
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1844784858601474}
+  m_GameObject: {fileID: 1500345670745072}
   m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -126,13 +126,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!50 &50393574140327320
+--- !u!50 &50709915493450086
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1500345670745072}
+  m_GameObject: {fileID: 1844784858601474}
   m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -175,7 +175,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.35
+  m_Radius: 0.25
 --- !u!95 &95419350340427576
 Animator:
   serializedVersion: 3
@@ -227,8 +227,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4742f74fc09354e8d50e9a9e8f44eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 10
   moveSpeed: 3
+  damage: 1
   attackSpeed: 1
+  aggroLimit: 1
 --- !u!212 &212736467077870992
 SpriteRenderer:
   m_ObjectHideFlags: 1

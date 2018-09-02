@@ -17,4 +17,9 @@ public class AggroRange : MonoBehaviour {
 			collision.transform.parent.name + "." + collision.name + " triggered aggro bounds.\"");
 		unit.OnTriggerAggroRange(collision.transform.parent.gameObject);
 	}
+
+	private void OnTriggerExit2D(Collider2D collision) {
+		if (collision.tag == this.tag) return;      // Don't collide with units on the same team
+		unit.OnTriggerExitAggroRange(collision.transform.parent.gameObject);
+	}
 }

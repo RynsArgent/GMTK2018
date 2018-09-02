@@ -19,9 +19,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4852122228569722}
-  - component: {fileID: 50193142167072758}
   - component: {fileID: 58508535217585788}
   - component: {fileID: 114301233194953904}
+  - component: {fileID: 50263731861956838}
   m_Layer: 11
   m_Name: UnitBounds
   m_TagString: Enemy
@@ -37,9 +37,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4390152501943356}
-  - component: {fileID: 50787677305156918}
   - component: {fileID: 58858470068001714}
   - component: {fileID: 114794496316961168}
+  - component: {fileID: 50620726249576204}
   m_Layer: 10
   m_Name: AggroRange
   m_TagString: Enemy
@@ -106,7 +106,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50193142167072758
+--- !u!50 &50263731861956838
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -126,7 +126,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!50 &50787677305156918
+--- !u!50 &50620726249576204
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -175,7 +175,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.35
+  m_Radius: 0.25
 --- !u!95 &95177742378065628
 Animator:
   serializedVersion: 3
@@ -216,8 +216,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 437a18857d510944693044caab0953cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 10
   moveSpeed: 3
+  damage: 1
   attackSpeed: 1
+  aggroLimit: 1
 --- !u!114 &114794496316961168
 MonoBehaviour:
   m_ObjectHideFlags: 1

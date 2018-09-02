@@ -10,12 +10,20 @@ public class Ally : Unit {
 	void Start () {
 		
 	}
-	
+
 	// Update is called once per frame
-	protected override void Update () {
+	protected override void Update() {
 		base.Update();
 	}
 
+	public override void OnTriggerAggroRange(GameObject other) {
+		if (aggroQueue.Count < aggroLimit && !aggroQueue.Contains(other)) {
+			aggroQueue.Enqueue(other);
+			other.GetComponent<Unit>().Engage(gameObject);
+		} else {
+			interestedEnemies.Add(other);
+		}
+	}
 
 
 }

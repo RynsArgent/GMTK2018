@@ -16,7 +16,9 @@ public class Enemy : Unit {
 	
 	// Update is called once per frame
 	protected override void Update () {
-		if (currentWp < waypoints.Length) {
+		base.Update();
+
+		if (aggroQueue.Count == 0 && currentWp < waypoints.Length) {
 			if (targetWp == null)
 				targetWp = waypoints[currentWp];
 
@@ -29,6 +31,10 @@ public class Enemy : Unit {
 
 			MoveAlongPath();
 		}
+	}
+
+	public override void OnTriggerAggroRange(GameObject other) {
+		// Override Unit.OnTriggerAggroRange to do nothing
 	}
 
 	private void MoveAlongPath() {
