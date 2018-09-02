@@ -33,7 +33,15 @@ public class Enemy : Unit {
 	}
 
 	public override void OnTriggerAggroRange(GameObject other) {
-		// Override Unit.OnTriggerAggroRange to do nothing
+        if (other.name != "Tower")
+        {
+            // Quick way to make the enemies aggro the tower only and not all attack the allied slime.
+            return;
+        }
+		if (aggroQueue.Count < aggroLimit && !aggroQueue.Contains(other)) {
+			aggroQueue.Enqueue(other);
+			other.GetComponent<Unit>().Engage(gameObject);
+		}
 	}
 
 	// Detects when its being lazered

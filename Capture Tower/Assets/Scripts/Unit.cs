@@ -84,12 +84,18 @@ public abstract class Unit : MonoBehaviour {
 		if (hp <= 0) {
 			StartCoroutine(Die());
 		} else {
-			animator.SetTrigger("Hurt");
+            if (animator != null)
+            {
+                animator.SetTrigger("Hurt");
+            }
 		}
 	}
 
 	IEnumerator Die() {
-		animator.SetTrigger("Die");
+        if (animator != null)
+        {
+            animator.SetTrigger("Die");
+        }
 		yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
 		Destroy(gameObject);
 	}
