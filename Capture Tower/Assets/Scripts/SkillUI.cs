@@ -6,10 +6,18 @@ using UnityEngine.UI;
 public class SkillUI : MonoBehaviour {
 
     public Text UI;
+    
     void Update()
     {
         {
-            UI.text = "Skill: " + GameController.skill;
+            if (GameController.skill == 1)
+            {
+                UI.text = "Magic: Laser";
+            }
+            else
+            {
+                UI.text = "Magic: Conversion";
+            }
         }
     }
 }
