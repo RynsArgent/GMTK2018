@@ -13,15 +13,8 @@ public class Enemy : Unit {
 		path = GameObject.Find("Path").GetComponent<Path>();
 		waypoints = path.waypointList;
 	}
-    //detects when its being lazered
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.collider.name == "NecroHit")
-        {
-            hp -= 10;
-        }
-    }
-    //Update is called once per frame
+
+    // Update is called once per frame
     protected override void Update () {
 		base.Update();
 		if (aggroQueue.Count == 0 && currentWp < waypoints.Length) {
@@ -41,6 +34,13 @@ public class Enemy : Unit {
 
 	public override void OnTriggerAggroRange(GameObject other) {
 		// Override Unit.OnTriggerAggroRange to do nothing
+	}
+
+	// Detects when its being lazered
+	public override void OnTriggerUnitBounds(GameObject other) {
+		if (other.name == "NecroHit") {
+			hp -= 10;
+		}
 	}
 
 	private void MoveAlongPath() {

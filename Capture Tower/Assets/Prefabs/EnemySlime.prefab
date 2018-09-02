@@ -58,7 +58,6 @@ GameObject:
   - component: {fileID: 212260136956372204}
   - component: {fileID: 95177742378065628}
   - component: {fileID: 114310959557729172}
-  - component: {fileID: 58803741565213318}
   m_Layer: 9
   m_Name: EnemySlime
   m_TagString: Enemy
@@ -157,21 +156,6 @@ CircleCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.25
---- !u!58 &58803741565213318
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1451756064387384}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
