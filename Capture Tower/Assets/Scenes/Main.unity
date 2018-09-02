@@ -180,6 +180,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a941dbcdba404f143aed37047ff6917a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &191762020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 191762021}
+  - component: {fileID: 191762022}
+  m_Layer: 0
+  m_Name: SpawnWitchOnPath1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &191762021
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 191762020}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 482760758}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &191762022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 191762020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c200777997abf814bb78126521701f77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnPrefab: {fileID: 1910301455387066, guid: 85e0a5a18ab1e374490330944d8f7806,
+    type: 2}
+  SpawnWaypoint: {fileID: 1029386081}
 --- !u!1 &275575342
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,6 +692,10 @@ Transform:
   - {fileID: 535506078}
   - {fileID: 1595159586}
   - {fileID: 829928016}
+  - {fileID: 191762021}
+  - {fileID: 1321140527}
+  - {fileID: 1301008648}
+  - {fileID: 2145984789}
   m_Father: {fileID: 393766154}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1423,6 +1470,14 @@ PlayableDirector:
     value: {fileID: 1595159585}
   - key: {fileID: 114109821811994542, guid: 20f992dd887733649a324cff4cd9386f, type: 2}
     value: {fileID: 829928015}
+  - key: {fileID: 114280771981080710, guid: 20f992dd887733649a324cff4cd9386f, type: 2}
+    value: {fileID: 191762020}
+  - key: {fileID: 114020857602289358, guid: 20f992dd887733649a324cff4cd9386f, type: 2}
+    value: {fileID: 1321140526}
+  - key: {fileID: 114001848818428178, guid: 20f992dd887733649a324cff4cd9386f, type: 2}
+    value: {fileID: 1301008647}
+  - key: {fileID: 114639358888212834, guid: 20f992dd887733649a324cff4cd9386f, type: 2}
+    value: {fileID: 2145984788}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &829928015
@@ -1702,6 +1757,10 @@ PlayableDirector:
     value: {fileID: 1595159585}
   - key: {fileID: 114109821811994542, guid: b8fab3d2f5912544face091ebd75500e, type: 2}
     value: {fileID: 829928015}
+  - key: {fileID: 114356182542609660, guid: b8fab3d2f5912544face091ebd75500e, type: 2}
+    value: {fileID: 1321140526}
+  - key: {fileID: 114312982109479994, guid: b8fab3d2f5912544face091ebd75500e, type: 2}
+    value: {fileID: 1301008647}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1015304338
@@ -2602,6 +2661,92 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a941dbcdba404f143aed37047ff6917a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1301008647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1301008648}
+  - component: {fileID: 1301008649}
+  m_Layer: 0
+  m_Name: SpawnWitchOnPath3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1301008648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1301008647}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 482760758}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1301008649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1301008647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c200777997abf814bb78126521701f77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnPrefab: {fileID: 1910301455387066, guid: 85e0a5a18ab1e374490330944d8f7806,
+    type: 2}
+  SpawnWaypoint: {fileID: 1750492951}
+--- !u!1 &1321140526
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1321140527}
+  - component: {fileID: 1321140528}
+  m_Layer: 0
+  m_Name: SpawnWitchOnPath2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1321140527
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1321140526}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 482760758}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1321140528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1321140526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c200777997abf814bb78126521701f77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnPrefab: {fileID: 1910301455387066, guid: 85e0a5a18ab1e374490330944d8f7806,
+    type: 2}
+  SpawnWaypoint: {fileID: 533423699}
 --- !u!1 &1323307174 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1562150655991532, guid: 2c6070877b9bf984dac65cc2c15db44d,
@@ -2922,6 +3067,14 @@ PlayableDirector:
     value: {fileID: 1595159585}
   - key: {fileID: 114109821811994542, guid: 36a6f3ad126c5b345b1dbd3b892fabcd, type: 2}
     value: {fileID: 829928015}
+  - key: {fileID: 114953692499838856, guid: 36a6f3ad126c5b345b1dbd3b892fabcd, type: 2}
+    value: {fileID: 191762020}
+  - key: {fileID: 114587419084381842, guid: 36a6f3ad126c5b345b1dbd3b892fabcd, type: 2}
+    value: {fileID: 1321140526}
+  - key: {fileID: 114724450453596500, guid: 36a6f3ad126c5b345b1dbd3b892fabcd, type: 2}
+    value: {fileID: 1301008647}
+  - key: {fileID: 114424667569892712, guid: 36a6f3ad126c5b345b1dbd3b892fabcd, type: 2}
+    value: {fileID: 2145984788}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1595159585
@@ -14309,6 +14462,49 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ffafe051c4a4df458ace8776fa2bcc8, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &2145984788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2145984789}
+  - component: {fileID: 2145984790}
+  m_Layer: 0
+  m_Name: SpawnWitchOnPath4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2145984789
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2145984788}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 482760758}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2145984790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2145984788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c200777997abf814bb78126521701f77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnPrefab: {fileID: 1910301455387066, guid: 85e0a5a18ab1e374490330944d8f7806,
+    type: 2}
+  SpawnWaypoint: {fileID: 113163800}
 --- !u!1001 &2147347311
 Prefab:
   m_ObjectHideFlags: 0

@@ -234,6 +234,7 @@ MonoBehaviour:
     type: 2}
   allyVersion: {fileID: 114294329177236768, guid: e7ef87456e7789e448b08fe19a74deaf,
     type: 2}
+  ConversionCost: 40
 --- !u!114 &114692450716671926
 MonoBehaviour:
   m_ObjectHideFlags: 1
