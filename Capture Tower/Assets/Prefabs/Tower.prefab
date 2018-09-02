@@ -241,6 +241,7 @@ MonoBehaviour:
     type: 2}
   onReceiveHitEffectPrefab: {fileID: 1858145917369242, guid: 54e2c3770d567674798b55b8f2ad1e23,
     type: 2}
+  gameOverScreen: {fileID: 0}
 --- !u!114 &114373643211984282
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -97,6 +97,7 @@ public abstract class Unit : MonoBehaviour {
 		hp -= damage;
 		if (hp <= 0) {
 			StartCoroutine(Die());
+            OnUnitDied();
 		} else {
             if (animator != null)
             {
@@ -110,7 +111,12 @@ public abstract class Unit : MonoBehaviour {
         }
 	}
 
-	IEnumerator Die() {
+    public virtual void OnUnitDied()
+    {
+        // Optional to override.
+    }
+
+    IEnumerator Die() {
 		state = State.Dying;
 		StopCoroutine("Attack");
         if (animator != null) {

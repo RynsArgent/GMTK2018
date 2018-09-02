@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour {
             skill = 2;
         }
 
-        if (scr_laserpoint.linerenderer.enabled == false)
+        if (scr_laserpoint.linerenderer != null && scr_laserpoint.linerenderer.enabled)
         {
             if (Mana < 500)
             {
