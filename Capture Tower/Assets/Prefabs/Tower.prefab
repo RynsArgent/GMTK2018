@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 4053427744860046}
   - component: {fileID: 212066784579128890}
   - component: {fileID: 114100232554920132}
+  - component: {fileID: 114447314081959562}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Ally
@@ -88,11 +89,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1278577883094296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.45, y: 0.44, z: 0}
-  m_LocalScale: {x: 0.952, y: 3.518, z: 1}
+  m_LocalPosition: {x: 7.45, y: -0.05, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4776702151538274}
   - {fileID: 4178446230983774}
+  - {fileID: 4776702151538274}
   - {fileID: 4880711805136322}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -104,11 +105,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1219740154460050}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.01, y: -0.372, z: 0}
+  m_LocalPosition: {x: -0.61, y: -1.73, z: 0}
   m_LocalScale: {x: 1.0504202, y: 0.2842524, z: 1}
   m_Children: []
   m_Father: {fileID: 4053427744860046}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4776702151538274
 Transform:
@@ -121,7 +122,7 @@ Transform:
   m_LocalScale: {x: 1.0504202, y: 0.2842524, z: 1}
   m_Children: []
   m_Father: {fileID: 4053427744860046}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4880711805136322
 Transform:
@@ -130,7 +131,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1055398638232930}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.02, y: -0.366, z: 0}
+  m_LocalPosition: {x: -0.6000004, y: -1.724, z: 0}
   m_LocalScale: {x: 1.0504202, y: 0.2842524, z: 1}
   m_Children: []
   m_Father: {fileID: 4053427744860046}
@@ -222,6 +223,9 @@ MonoBehaviour:
   damage: 0
   attackSpeed: 0
   aggroLimit: 5
+  aggroQueue: []
+  interestedEnemies: []
+  state: 0
 --- !u!114 &114373643211984282
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -233,6 +237,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23acbdec3c360a24287d151aed54ed78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114447314081959562
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1278577883094296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b088e0b5a92e0a747a608f44381f8d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 10
+  moveSpeed: 0
+  damage: 0
+  attackSpeed: 0
+  aggroLimit: 5
+  aggroQueue: []
+  interestedEnemies: []
+  state: 0
 --- !u!114 &114531280720834570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -385,7 +408,7 @@ SpriteRenderer:
   m_SortingLayerID: 715927577
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4f7f1a455dd2c024b901a58d36975546, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b93ece7c7f295454fbcd7fed77ef7c11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
