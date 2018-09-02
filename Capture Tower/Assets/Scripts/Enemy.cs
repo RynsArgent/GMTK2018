@@ -13,11 +13,17 @@ public class Enemy : Unit {
 		path = GameObject.Find("Path").GetComponent<Path>();
 		waypoints = path.waypointList;
 	}
-	
-	// Update is called once per frame
-	protected override void Update () {
+    //detects when its being lazered
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.collider.name == "NecroHit")
+        {
+            hp -= 10;
+        }
+    }
+    //Update is called once per frame
+    protected override void Update () {
 		base.Update();
-
 		if (aggroQueue.Count == 0 && currentWp < waypoints.Length) {
 			if (targetWp == null)
 				targetWp = waypoints[currentWp];
@@ -51,6 +57,7 @@ public class Enemy : Unit {
 	}
 
 	public void Convert() {
+
 		// Death/conversion animation stuff
 
 		// Instantiate Ally object and destroy this
