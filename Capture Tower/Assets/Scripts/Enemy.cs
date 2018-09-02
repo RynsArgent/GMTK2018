@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : Unit {
+
+	public Ally allyVersion;
+
 	private Path path;
 	private Transform[] waypoints;
 	private int currentWp = 0;
@@ -43,6 +46,10 @@ public class Enemy : Unit {
 		}
 	}
 
+	public override void OnClickUnitBounds() {
+		Convert();
+	}
+
 	private void MoveAlongPath() {
 		transform.root.position = Vector3.MoveTowards(transform.root.position, targetWp.position, moveSpeed * Time.deltaTime);
 
@@ -57,9 +64,8 @@ public class Enemy : Unit {
 	}
 
 	public void Convert() {
-
-		// Death/conversion animation stuff
-
-		// Instantiate Ally object and destroy this
+		// Instantiate Ally object and destroy this (cool conversion gfx?)
+		Instantiate(allyVersion, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+		Destroy(gameObject);
 	}
 }

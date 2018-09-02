@@ -56,6 +56,10 @@ public abstract class Unit : MonoBehaviour {
 	public virtual void OnTriggerExitUnitBounds(GameObject other) {
 	}
 
+	public virtual void OnClickUnitBounds() {
+
+	}
+
 	IEnumerator Attack(GameObject target) {
 		Debug.Log("Calling attack coroutine");
 		readyToAttack = false;
@@ -88,7 +92,7 @@ public abstract class Unit : MonoBehaviour {
 		}
 	}
 
-	IEnumerator Die() {
+	public IEnumerator Die() {
 		animator.SetTrigger("Die");
 		yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
 		Destroy(gameObject);
