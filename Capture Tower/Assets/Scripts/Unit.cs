@@ -68,6 +68,14 @@ public abstract class Unit : MonoBehaviour {
 		state = State.Attacking;
 		animator.SetTrigger("Attack");
 
+        if (target.transform.position.x < this.transform.position.x)
+        {
+            this.transform.right = Vector2.left;
+        }
+        else
+        {
+            this.transform.right = Vector2.right;
+        }
 		target.GetComponent<Unit>().Damage(damage);
 		yield return new WaitForSeconds(attackSpeed);
 
