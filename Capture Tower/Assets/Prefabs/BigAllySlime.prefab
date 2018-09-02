@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 15
-  moveSpeed: 3
+  moveSpeed: 2
   damage: 2
   attackSpeed: 1
   aggroLimit: 3

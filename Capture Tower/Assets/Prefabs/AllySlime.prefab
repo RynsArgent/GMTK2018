@@ -228,10 +228,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 4
-  moveSpeed: 3
+  moveSpeed: 2
   damage: 1
   attackSpeed: 1
   aggroLimit: 1
+  manaLoot: 10
   aggroQueue: []
   interestedEnemies: []
   state: 0
