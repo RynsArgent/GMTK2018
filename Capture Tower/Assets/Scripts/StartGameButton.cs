@@ -7,7 +7,7 @@ public class StartGameButton : MonoBehaviour {
 
 	public void PlayGame()
     {
-        SceneManager.LoadScene("Jam's Scene", LoadSceneMode.Single);
+        SceneManager.LoadScene("Main", LoadSceneMode.Single);
     }
 
     public void QuitGame()
