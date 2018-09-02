@@ -13,6 +13,9 @@ public abstract class Unit : MonoBehaviour {
 	public int aggroLimit = 1;
     public int manaLoot = 10;
 
+	public AudioClip hitsound1;
+	public AudioClip hitsound2;
+
 	protected SpriteRenderer spriteRenderer;
 	protected Animator animator;
 	[SerializeField] protected GameObject target;
@@ -58,12 +61,9 @@ public abstract class Unit : MonoBehaviour {
 		state = State.Attacking;
 		animator.SetTrigger("Attack");
 
-        if (target.transform.position.x < this.transform.position.x)
-        {
+        if (target.transform.position.x < this.transform.position.x) {
             this.transform.right = Vector2.left;
-        }
-        else
-        {
+        } else {
             this.transform.right = Vector2.right;
         }
         attackTarget = target;
@@ -94,6 +94,7 @@ public abstract class Unit : MonoBehaviour {
 
 	// Lose [damage] amount of health
 	public void Damage(int damage) {
+		SoundManager.instance.RandomizeSfx(hitsound1, hitsound2);
 		hp -= damage;
 		if (hp <= 0) {
 			StartCoroutine(Die());
