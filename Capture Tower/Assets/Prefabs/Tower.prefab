@@ -233,6 +233,8 @@ MonoBehaviour:
   attackSpeed: 0
   aggroLimit: 5
   manaLoot: 10
+  hitsound1: {fileID: 0}
+  hitsound2: {fileID: 0}
   target: {fileID: 0}
   aggroQueue: []
   interestedEnemies: []

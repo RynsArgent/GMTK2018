@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Playables;
 
 public class WaveManager : MonoBehaviour
 {
+    public GameObject gameOverScreen;
+    public Text gameOverText;
+
     // Waves in order.
     private List<PlayableDirector> waves;
     int currentWaveIndex;
@@ -25,6 +29,14 @@ public class WaveManager : MonoBehaviour
         if (currentWaveIndex >= waves.Count)
         {
             Debug.Log("FINISHED ALL WAVES");
+            if (gameOverScreen != null)
+            {
+                gameOverScreen.SetActive(true);
+                if (gameOverText != null)
+                {
+                    gameOverText.text = "You Win!";
+                }
+            }
             return;
         }
 
