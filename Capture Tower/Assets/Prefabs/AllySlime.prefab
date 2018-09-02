@@ -235,6 +235,10 @@ MonoBehaviour:
   aggroQueue: []
   interestedEnemies: []
   state: 0
+  deathEffectPrefab: {fileID: 1560221471788904, guid: 06eeafbdba6671344aea475773909c90,
+    type: 2}
+  onReceiveHitEffectPrefab: {fileID: 1852107141737612, guid: c7fb7603e64a8d74d8b3940c3ffb7cf1,
+    type: 2}
 --- !u!212 &212736467077870992
 SpriteRenderer:
   m_ObjectHideFlags: 1

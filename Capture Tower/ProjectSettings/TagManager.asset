@@ -55,3 +55,6 @@ TagManager:
   - name: laser
     uniqueID: 3437985569
     locked: 0
+  - name: effects
+    uniqueID: 1194832641
+    locked: 0

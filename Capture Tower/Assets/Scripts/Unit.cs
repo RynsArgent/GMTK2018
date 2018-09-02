@@ -18,8 +18,11 @@ public abstract class Unit : MonoBehaviour {
 	[SerializeField] protected List<GameObject> interestedEnemies;
 	[SerializeField] protected State state;
 
-	// Use this for initialization
-	void Awake() {
+    public GameObject deathEffectPrefab;
+    public GameObject onReceiveHitEffectPrefab;
+
+    // Use this for initialization
+    void Awake() {
 		spriteRenderer = GetComponent<SpriteRenderer>();
 		animator = GetComponent<Animator>();
 		aggroQueue = new List<GameObject>(aggroLimit);
@@ -63,6 +66,7 @@ public abstract class Unit : MonoBehaviour {
 
 	}
 
+    private GameObject attackTarget;
 	IEnumerator Attack(GameObject target) {
 		Debug.Log("Calling attack coroutine");
 		state = State.Attacking;
@@ -76,11 +80,19 @@ public abstract class Unit : MonoBehaviour {
         {
             this.transform.right = Vector2.right;
         }
-		target.GetComponent<Unit>().Damage(damage);
-		yield return new WaitForSeconds(attackSpeed);
+        attackTarget = target;
+		yield return new WaitForSeconds(attackSpeed);   
 
-		state = State.Idle;
+        state = State.Idle;
 	}
+
+    public void OnAttackFrame()
+    {
+        if (attackTarget != null)
+        {
+            attackTarget.GetComponent<Unit>().Damage(damage);
+        }
+    }
 
 	// Engage gets called when an enemy unit begins attacking this one
 	public void Engage(GameObject other) {
@@ -108,7 +120,12 @@ public abstract class Unit : MonoBehaviour {
             {
                 animator.SetTrigger("Hurt");
             }
-		}
+            if (onReceiveHitEffectPrefab != null)
+            {
+                GameObject.Instantiate<GameObject>(onReceiveHitEffectPrefab, this.transform.position, Quaternion.identity);
+            }
+
+        }
 	}
 
 	IEnumerator Die() {
@@ -117,13 +134,21 @@ public abstract class Unit : MonoBehaviour {
         if (animator != null) {
             animator.SetTrigger("Die");
 		}
-		foreach (GameObject o in aggroQueue) {
+
+        foreach (GameObject o in aggroQueue) {
 			o.GetComponent<Unit>().Forget(gameObject);
 		}
 		foreach (GameObject o in interestedEnemies) {
 			o.GetComponent<Unit>().Forget(gameObject);
 		}
-		yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
-		Destroy(gameObject);
+        if (animator != null)
+        {
+            yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+        }
+        if (deathEffectPrefab != null)
+        {
+            GameObject.Instantiate<GameObject>(deathEffectPrefab, this.transform.position, Quaternion.identity);
+        }
+        Destroy(gameObject);
 	}
 }
