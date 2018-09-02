@@ -9,10 +9,6 @@ public class ManaUI : MonoBehaviour {
     public Text UI;
 
     void Update () {
-        if (manaPoints == null)
-        {
-            return;
-        }
-        UI.text = "Mana: " + manaPoints.Mana;
+        UI.text = "Mana: " + GameController.Mana;
     }
 }

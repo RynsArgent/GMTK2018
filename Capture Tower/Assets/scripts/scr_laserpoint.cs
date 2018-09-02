@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
 public class scr_laserpoint : MonoBehaviour {
-    private LineRenderer linerenderer;
+    public static LineRenderer linerenderer;
     public Transform Tower;
     public Vector3 offset;
-    public int Mana;
+    
     // Use this for initialization
     void Start() {
         linerenderer = GetComponent<LineRenderer>();
@@ -21,20 +21,18 @@ public class scr_laserpoint : MonoBehaviour {
 
     if (Input.GetKey("mouse 0"))
         {
-        if (Mana > 0)
+        if (GameController.Mana > 0 && GameController.skill == 1)
             {
-            linerenderer.enabled = true;
-            Mana -= 2;
+              linerenderer.enabled = true;
+              GameController.Mana -= 2;
             }
         }
     else
         {
         linerenderer.enabled = false;
-       if (Mana < 200)
-        Mana += 1;
         }
 
-    if (Mana <= 0)
+    if (GameController.Mana <= 0)
         {
         linerenderer.enabled = false;
         }

@@ -1,11 +1,12 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : Unit {
 
-	public Ally allyVersion;
+    public Ally allyVersion;
 
+    private GameObject convert;
 	private Path path;
 	private Transform[] waypoints;
 	private int currentWp = 0;
@@ -36,6 +37,11 @@ public class Enemy : Unit {
 			}
 
 			MoveAlongPath();
+
+            if (Input.GetMouseButtonDown(0) && GameController.skill == 1)
+            {
+                Damage(1);
+            }
 		}
 	}
 
@@ -51,16 +57,21 @@ public class Enemy : Unit {
 		}
 	}
 
-	// Detects when its being lazered
-	public override void OnTriggerUnitBounds(GameObject other) {
-		if (other.name == "NecroHit") {
-			hp -= 10;
-		}
-	}
+    public override void OnClickUnitBounds() {
 
-	public override void OnClickUnitBounds() {
-		Convert();
-	}
+        if (GameController.Mana > 0)
+        {
+            if (GameController.skill == 2)
+            { 
+                // Instantiate Ally object and destroy this (cool conversion gfx?)
+                Instantiate(allyVersion, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+                Destroy(gameObject);
+                GameController.Mana -= 10;
+            }
+        }
+        
+        
+    }
 
 	private void MoveAlongPath() {
 		transform.root.position = Vector3.MoveTowards(transform.root.position, targetWp.position, moveSpeed * Time.deltaTime);
@@ -75,9 +86,5 @@ public class Enemy : Unit {
 		}
 	}
 
-	public void Convert() {
-		// Instantiate Ally object and destroy this (cool conversion gfx?)
-		Instantiate(allyVersion, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
-		Destroy(gameObject);
-	}
+	
 }
