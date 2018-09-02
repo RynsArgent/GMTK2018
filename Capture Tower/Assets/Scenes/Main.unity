@@ -686,6 +686,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d341f42b00643094f9f2a6725a1b5547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ManaDelay: 7
+  ManaRegen: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -14129,28 +14131,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4053427744860046, guid: 6ffafe051c4a4df458ace8776fa2bcc8, type: 2}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1278577883094296, guid: 6ffafe051c4a4df458ace8776fa2bcc8, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4178446230983774, guid: 6ffafe051c4a4df458ace8776fa2bcc8, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -0.21999967
-      objectReference: {fileID: 0}
-    - target: {fileID: 4880711805136322, guid: 6ffafe051c4a4df458ace8776fa2bcc8, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -0.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 58922289009741240, guid: 6ffafe051c4a4df458ace8776fa2bcc8,
-        type: 2}
-      propertyPath: m_Radius
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 58759836009473222, guid: 6ffafe051c4a4df458ace8776fa2bcc8,
-        type: 2}
-      propertyPath: m_Radius
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
