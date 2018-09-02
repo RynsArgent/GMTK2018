@@ -5,7 +5,9 @@ using UnityEngine;
 public class GameController : MonoBehaviour {
     public static int Mana = 40;
     public static int skill = 1;
-    public static int TowerHP = 100;
+    public static int TowerHP = 10;
+    public int ManaDelay = 7;
+    public int ManaRegen = 1;
     private int ManaTimer = 0;
     // Use this for initialization
     void Start () {
@@ -28,13 +30,13 @@ public class GameController : MonoBehaviour {
         {
             if (Mana < 200)
             {
-                if (ManaTimer < 5)
+                if (ManaTimer < ManaDelay)
                 {
                     ManaTimer++;
                 }
                 else
                 {
-                    Mana += 1;
+                    Mana += ManaRegen;
                     ManaTimer = 0;
                 }
             }
