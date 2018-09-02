@@ -216,11 +216,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 437a18857d510944693044caab0953cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 10
+  hp: 2
   moveSpeed: 3
   damage: 1
   attackSpeed: 1
   aggroLimit: 1
+  aggroQueue: []
+  interestedEnemies: []
+  state: 0
+  allyVersion: {fileID: 114860106129322724, guid: 0e8f2746278afab45852112498521a30,
+    type: 2}
 --- !u!114 &114794496316961168
 MonoBehaviour:
   m_ObjectHideFlags: 1

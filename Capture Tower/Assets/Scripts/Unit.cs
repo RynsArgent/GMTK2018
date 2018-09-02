@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class Unit : MonoBehaviour {
 
+	protected enum State { Idle, Moving, Attacking, Dying };
+
 	public int hp = 10;
 	public float moveSpeed = 1f;
 	public int damage = 1;
@@ -12,34 +14,35 @@ public abstract class Unit : MonoBehaviour {
 
 	protected SpriteRenderer spriteRenderer;
 	protected Animator animator;
-	protected Queue<GameObject> aggroQueue;
-	protected List<GameObject> interestedEnemies;
-	
-	private bool readyToAttack = true;
+	[SerializeField] protected List<GameObject> aggroQueue;
+	[SerializeField] protected List<GameObject> interestedEnemies;
+	[SerializeField] protected State state;
 
 	// Use this for initialization
 	void Awake() {
 		spriteRenderer = GetComponent<SpriteRenderer>();
 		animator = GetComponent<Animator>();
-		aggroQueue = new Queue<GameObject>(aggroLimit);
+		aggroQueue = new List<GameObject>(aggroLimit);
 		interestedEnemies = new List<GameObject>();
 	}
 
 	// Update is called once per frame
 	protected virtual void Update() {
+		if (state == State.Dying) {
+			// Dying, do nothing else
+			return;
+		}
 		if (aggroQueue.Count < aggroLimit && interestedEnemies.Count > 0) {
 			GameObject nextEnemy = interestedEnemies[0];
-			aggroQueue.Enqueue(nextEnemy);
+			aggroQueue.Add(nextEnemy);
 			interestedEnemies.RemoveAt(0);
 		}
-		if (aggroQueue.Count > 0 && readyToAttack) {
-			try {
-				Debug.Log(name + " ATTACKING " + aggroQueue.Peek().name + "!");
-				StartCoroutine(Attack(aggroQueue.Peek()));
-			} catch (MissingReferenceException) {
-				// The targeted enemy has died, so skip trying to attack and remove the empty reference.
-				aggroQueue.Dequeue();
+		if (aggroQueue.Count > 0 && state != State.Attacking) {
+			if (aggroQueue.Count >= aggroLimit) {
+				aggroQueue.Remove(null);
 			}
+			Debug.Log(name + " ATTACKING " + aggroQueue[0].name + "!");
+			StartCoroutine("Attack", aggroQueue[0]);
 		}
 	}
 
@@ -62,24 +65,29 @@ public abstract class Unit : MonoBehaviour {
 
 	IEnumerator Attack(GameObject target) {
 		Debug.Log("Calling attack coroutine");
-		readyToAttack = false;
+		state = State.Attacking;
 		animator.SetTrigger("Attack");
 
 		target.GetComponent<Unit>().Damage(damage);
 		yield return new WaitForSeconds(attackSpeed);
 
-		readyToAttack = true;
+		state = State.Idle;
 	}
 
 	// Engage gets called when an enemy unit begins attacking this one
 	public void Engage(GameObject other) {
 		// TODO: What happens ranged units engage with melee units?
 		if (aggroQueue.Count < aggroLimit && !aggroQueue.Contains(other)) {
-			aggroQueue.Enqueue(other);
+			aggroQueue.Add(other);
 		} else {
 			// If the engaged unit already has max aggro, put this enemy at the front of the interest list
 			interestedEnemies.Insert(0, other);
 		}
+	}
+
+	public void Forget(GameObject other) {
+		aggroQueue.Remove(other);
+		interestedEnemies.Remove(other);
 	}
 
 	// Lose [damage] amount of health
@@ -96,10 +104,17 @@ public abstract class Unit : MonoBehaviour {
 	}
 
 	IEnumerator Die() {
-        if (animator != null)
-        {
+		state = State.Dying;
+		StopCoroutine("Attack");
+        if (animator != null) {
             animator.SetTrigger("Die");
-        }
+		}
+		foreach (GameObject o in aggroQueue) {
+			o.GetComponent<Unit>().Forget(gameObject);
+		}
+		foreach (GameObject o in interestedEnemies) {
+			o.GetComponent<Unit>().Forget(gameObject);
+		}
 		yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
 		Destroy(gameObject);
 	}

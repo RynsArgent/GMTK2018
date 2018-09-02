@@ -227,11 +227,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4742f74fc09354e8d50e9a9e8f44eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 10
+  hp: 4
   moveSpeed: 3
   damage: 1
   attackSpeed: 1
   aggroLimit: 1
+  aggroQueue: []
+  interestedEnemies: []
+  state: 0
 --- !u!212 &212736467077870992
 SpriteRenderer:
   m_ObjectHideFlags: 1

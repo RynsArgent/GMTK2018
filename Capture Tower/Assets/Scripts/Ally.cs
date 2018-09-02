@@ -18,7 +18,7 @@ public class Ally : Unit {
 
 	public override void OnTriggerAggroRange(GameObject other) {
 		if (aggroQueue.Count < aggroLimit && !aggroQueue.Contains(other)) {
-			aggroQueue.Enqueue(other);
+			aggroQueue.Add(other);
 			other.GetComponent<Unit>().Engage(gameObject);
 		} else {
 			interestedEnemies.Add(other);

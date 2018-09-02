@@ -10,9 +10,8 @@ public class TowerHealth : Unit {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if(hp <= 0)
-        {
+	protected override void Update () {
+		if (hp <= 0) {
             Destroy(gameObject);
         }
 	}

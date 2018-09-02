@@ -20,7 +20,11 @@ public class Enemy : Unit {
     // Update is called once per frame
     protected override void Update () {
 		base.Update();
-		if (aggroQueue.Count == 0 && currentWp < waypoints.Length) {
+		if (state == State.Dying) {
+			// Dying, do nothing else
+			return;
+		}
+		if (aggroQueue.Count == 0 && currentWp < waypoints.Length && state != State.Attacking) {
 			if (targetWp == null)
 				targetWp = waypoints[currentWp];
 
@@ -42,7 +46,7 @@ public class Enemy : Unit {
             return;
         }
 		if (aggroQueue.Count < aggroLimit && !aggroQueue.Contains(other)) {
-			aggroQueue.Enqueue(other);
+			aggroQueue.Add(other);
 			other.GetComponent<Unit>().Engage(gameObject);
 		}
 	}
