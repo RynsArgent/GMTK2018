@@ -37,11 +37,6 @@ public class Enemy : Unit {
 			}
 
 			MoveAlongPath();
-
-            if (Input.GetMouseButtonDown(0) && GameController.skill == 1)
-            {
-                Damage(1);
-            }
 		}
 	}
 

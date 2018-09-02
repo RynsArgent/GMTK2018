@@ -143,10 +143,6 @@ public abstract class Unit : MonoBehaviour {
 		foreach (GameObject o in interestedEnemies) {
 			o.GetComponent<Unit>().Forget(gameObject);
 		}
-        if (animator != null)
-        {
-            yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
-        }
         if (deathEffectPrefab != null)
         {
             GameObject.Instantiate<GameObject>(deathEffectPrefab, this.transform.position, Quaternion.identity);
@@ -156,5 +152,6 @@ public abstract class Unit : MonoBehaviour {
             GameController.Mana += manaLoot;
         }
         Destroy(gameObject);
+        yield return null;
 	}
 }
