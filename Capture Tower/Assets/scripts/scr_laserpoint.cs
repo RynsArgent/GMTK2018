@@ -29,31 +29,28 @@ public class scr_laserpoint : MonoBehaviour {
         {
             if (GameController.Mana > 0)
             {
-                if (GameController.skill == 1)
+                linerenderer.enabled = true;
+                if (laserTimer < 10)
                 {
-                    linerenderer.enabled = true;
-                    if (laserTimer < 10)
+                    laserTimer++;
+                }
+                else
+                {
+                    // Deal damage to first enemy found in within point.
+                    int resultCount = Physics2D.OverlapPointNonAlloc(worldMousePos, mouseResults, targetLayerMask);
+                    for (int i = 0; i < resultCount; i++)
                     {
-                        laserTimer++;
-                    }
-                    else
-                    {
-                        // Deal damage to first enemy found in within point.
-                        int resultCount = Physics2D.OverlapPointNonAlloc(worldMousePos, mouseResults, targetLayerMask);
-                        for (int i = 0; i < resultCount; i++)
+                        Collider2D result = mouseResults[i];
+                        Enemy enemy = result.GetComponentInParent<Enemy>();
+                        if (enemy != null)
                         {
-                            Collider2D result = mouseResults[i];
-                            Enemy enemy = result.GetComponentInParent<Enemy>();
-                            if (enemy != null)
-                            {
-                                enemy.Damage(1);
-                                break;
-                            }
+                            enemy.Damage(1);
+                            break;
                         }
-
-                        GameController.Mana -= 2;
-                        laserTimer = 0;
                     }
+
+                    GameController.Mana -= 2;
+                    laserTimer = 0;
                 }
             }
         }
@@ -61,6 +58,27 @@ public class scr_laserpoint : MonoBehaviour {
         {
             linerenderer.enabled = false;
         }
+
+        if (Input.GetKeyDown("mouse 1"))
+        {
+            if (GameController.Mana > 0)
+            {
+                // Deal damage to first enemy found in within point.
+                int resultCount = Physics2D.OverlapPointNonAlloc(worldMousePos, mouseResults, targetLayerMask);
+                for (int i = 0; i < resultCount; i++)
+                {
+                    Collider2D result = mouseResults[i];
+                    Enemy enemy = result.GetComponentInParent<Enemy>();
+                    if (enemy != null)
+                    {
+                        enemy.OnClickUnitBounds();
+                        break;
+                    }
+                }
+
+            }
+        }
+
 
         if (GameController.Mana <= 0)
         {
