@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameController : MonoBehaviour {
-    public static int Mana;
+    public static int Mana = 40;
     public static int skill = 1;
-
+    public static int TowerHP = 100;
+    private int ManaTimer = 0;
     // Use this for initialization
     void Start () {
 		
@@ -27,7 +28,15 @@ public class GameController : MonoBehaviour {
         {
             if (Mana < 200)
             {
-                Mana += 1;
+                if (ManaTimer < 5)
+                {
+                    ManaTimer++;
+                }
+                else
+                {
+                    Mana += 1;
+                    ManaTimer = 0;
+                }
             }
         }
     }

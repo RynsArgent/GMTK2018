@@ -4,6 +4,7 @@ public class scr_laserpoint : MonoBehaviour {
     public static LineRenderer linerenderer;
     public Transform Tower;
     public Vector3 offset;
+    private int laserTimer = 0;
     
     // Use this for initialization
     void Start() {
@@ -24,7 +25,15 @@ public class scr_laserpoint : MonoBehaviour {
         if (GameController.Mana > 0 && GameController.skill == 1)
             {
               linerenderer.enabled = true;
-              GameController.Mana -= 2;
+                if (laserTimer < 10)
+                {
+                    laserTimer++;
+                }
+                else
+                {
+                    GameController.Mana -= 2;
+                    laserTimer = 0;
+                }
             }
         }
     else
