@@ -73,7 +73,7 @@ Transform:
   m_GameObject: {fileID: 1658888667178622}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.05, y: -0.1, z: 0}
-  m_LocalScale: {x: 1, y: 7, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4887189094467318}
   m_RootOrder: 0
@@ -101,7 +101,7 @@ Transform:
   m_GameObject: {fileID: 1927820980749980}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.05, y: -0.1, z: 0}
-  m_LocalScale: {x: 1, y: 1.2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4887189094467318}
   m_RootOrder: 1
@@ -160,7 +160,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 2.5
 --- !u!58 &58806155618926158
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -175,7 +175,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Radius: 0.35
 --- !u!95 &95654215077868124
 Animator:
   serializedVersion: 3
@@ -221,11 +221,14 @@ MonoBehaviour:
   damage: 2
   attackSpeed: 2
   aggroLimit: 1
+  target: {fileID: 0}
   aggroQueue: []
   interestedEnemies: []
   state: 0
-  deathEffectPrefab: {fileID: 0}
-  onReceiveHitEffectPrefab: {fileID: 0}
+  deathEffectPrefab: {fileID: 1105458523316106, guid: afd9b99357b3cb34f9ae405939b085f8,
+    type: 2}
+  onReceiveHitEffectPrefab: {fileID: 1858145917369242, guid: 54e2c3770d567674798b55b8f2ad1e23,
+    type: 2}
 --- !u!114 &114692450716671926
 MonoBehaviour:
   m_ObjectHideFlags: 1

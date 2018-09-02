@@ -15,6 +15,7 @@ public abstract class Unit : MonoBehaviour {
 
 	protected SpriteRenderer spriteRenderer;
 	protected Animator animator;
+	[SerializeField] protected GameObject target;
 	[SerializeField] protected List<GameObject> aggroQueue;
 	[SerializeField] protected List<GameObject> interestedEnemies;
 	[SerializeField] protected State state;
@@ -32,22 +33,6 @@ public abstract class Unit : MonoBehaviour {
 
 	// Update is called once per frame
 	protected virtual void Update() {
-		if (state == State.Dying) {
-			// Dying, do nothing else
-			return;
-		}
-		if (aggroQueue.Count < aggroLimit && interestedEnemies.Count > 0) {
-			GameObject nextEnemy = interestedEnemies[0];
-			aggroQueue.Add(nextEnemy);
-			interestedEnemies.RemoveAt(0);
-		}
-		if (aggroQueue.Count > 0 && state != State.Attacking) {
-			if (aggroQueue.Count >= aggroLimit) {
-				aggroQueue.Remove(null);
-			}
-			Debug.Log(name + " ATTACKING " + aggroQueue[0].name + "!");
-			StartCoroutine("Attack", aggroQueue[0]);
-		}
 	}
 
 	public virtual void OnTriggerAggroRange(GameObject other) {
@@ -96,15 +81,10 @@ public abstract class Unit : MonoBehaviour {
         }
     }
 
-	// Engage gets called when an enemy unit begins attacking this one
-	public void Engage(GameObject other) {
-		// TODO: What happens ranged units engage with melee units?
-		if (aggroQueue.Count < aggroLimit && !aggroQueue.Contains(other)) {
-			aggroQueue.Add(other);
-		} else {
-			// If the engaged unit already has max aggro, put this enemy at the front of the interest list
-			interestedEnemies.Insert(0, other);
-		}
+	// Check if this unit has aggro capacity left to aggro another enemy
+	// Returns true if other can be added
+	public virtual bool Engage(GameObject other) {
+		return false;
 	}
 
 	public void Forget(GameObject other) {
