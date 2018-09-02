@@ -56,6 +56,10 @@ public abstract class Unit : MonoBehaviour {
 	public virtual void OnTriggerExitUnitBounds(GameObject other) {
 	}
 
+	public virtual void OnClickUnitBounds() {
+
+	}
+
 	IEnumerator Attack(GameObject target) {
 		Debug.Log("Calling attack coroutine");
 		readyToAttack = false;

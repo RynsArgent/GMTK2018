@@ -32,4 +32,9 @@ public class UnitBounds : MonoBehaviour {
             unit.OnTriggerExitUnitBounds(collision.gameObject);
         }
 	}
+
+	private void OnMouseDown() {
+		Debug.Log(this.transform.parent.name + ".UnitBounds CLICKED!");
+		unit.OnClickUnitBounds();
+	}
 }
