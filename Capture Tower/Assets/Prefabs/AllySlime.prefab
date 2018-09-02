@@ -233,6 +233,9 @@ MonoBehaviour:
   attackSpeed: 1
   aggroLimit: 1
   manaLoot: 10
+  hitsound1: {fileID: 8300000, guid: 55976b589b3b2774a8d4a0f612a65162, type: 3}
+  hitsound2: {fileID: 8300000, guid: ff06d8c4ed448aa47a50d5f93f4acd3d, type: 3}
+  target: {fileID: 0}
   aggroQueue: []
   interestedEnemies: []
   state: 0
@@ -276,7 +279,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 31f6a2668eb46d04caaca6f5ee15ed80, type: 3}
-  m_Color: {r: 0.045033824, g: 0.8679245, b: 0.1456615, a: 1}
+  m_Color: {r: 0.020914912, g: 0.56871265, b: 0.8867924, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0

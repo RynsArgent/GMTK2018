@@ -67,7 +67,14 @@ public class Enemy : Unit {
     }
 
 	private void MoveAlongPath() {
+		Vector3 oldPosition = transform.root.position;
 		transform.root.position = Vector3.MoveTowards(transform.root.position, targetWp.position, moveSpeed * Time.deltaTime);
+
+		if (transform.root.position.x < oldPosition.x) {
+			spriteRenderer.flipX = true;
+		} else {
+			spriteRenderer.flipX = false;
+		}
 
 		if (transform.root.position == targetWp.position) {
 			currentWp++;

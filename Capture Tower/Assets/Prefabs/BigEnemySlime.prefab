@@ -222,6 +222,9 @@ MonoBehaviour:
   attackSpeed: 1
   aggroLimit: 3
   manaLoot: 10
+  hitsound1: {fileID: 8300000, guid: ff06d8c4ed448aa47a50d5f93f4acd3d, type: 3}
+  hitsound2: {fileID: 8300000, guid: ff06d8c4ed448aa47a50d5f93f4acd3d, type: 3}
+  target: {fileID: 0}
   aggroQueue: []
   interestedEnemies: []
   state: 0
