@@ -29,6 +29,7 @@ public class UnitBounds : MonoBehaviour {
 		if (collision.tag == this.tag || collision.gameObject.layer == 10) return;  // Don't collide with units on the same team or AggroBounds
         if (collision.tag == "Enemy" || collision.tag == "Ally")
         {
+            Debug.Log(collision.transform.parent);
             unit.OnTriggerExitUnitBounds(collision.transform.parent.gameObject);
         }
         else
