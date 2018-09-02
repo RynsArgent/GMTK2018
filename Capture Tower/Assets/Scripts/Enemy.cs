@@ -61,19 +61,10 @@ public class Enemy : Unit {
 	}
 
     public override void OnClickUnitBounds() {
-
-        if (GameController.Mana > 0)
-        {
-            if (GameController.skill == 2)
-            { 
-                // Instantiate Ally object and destroy this (cool conversion gfx?)
-                Instantiate(allyVersion, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
-                Destroy(gameObject);
-                GameController.Mana -= 10;
-            }
-        }
         
-        
+        // Instantiate Ally object and destroy this (cool conversion gfx?)
+        Instantiate(allyVersion, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+        Destroy(gameObject);
     }
 
 	private void MoveAlongPath() {
