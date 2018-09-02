@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 
 public class ManaUI : MonoBehaviour {
-    public scr_laserpoint manaPoints;
     public Text UI;
 
     void Update () {

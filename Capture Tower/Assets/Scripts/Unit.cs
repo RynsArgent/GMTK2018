@@ -11,6 +11,7 @@ public abstract class Unit : MonoBehaviour {
 	public int damage = 1;
 	public float attackSpeed = 1f;
 	public int aggroLimit = 1;
+    public int manaLoot = 10;
 
 	protected SpriteRenderer spriteRenderer;
 	protected Animator animator;
@@ -149,6 +150,10 @@ public abstract class Unit : MonoBehaviour {
         if (deathEffectPrefab != null)
         {
             GameObject.Instantiate<GameObject>(deathEffectPrefab, this.transform.position, Quaternion.identity);
+        }
+        if (gameObject.tag == "Enemy")
+        {
+            GameController.Mana += manaLoot;
         }
         Destroy(gameObject);
 	}
